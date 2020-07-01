@@ -1,3 +1,4 @@
+
 kind: Service
 apiVersion: v1
 metadata:
@@ -8,9 +9,8 @@ spec:
     app: despliegue
   ports:
   - protocol: TCP
-    port: 8080
-    nodePort: 8081
-
+    port: 80
+    nodePort: 30002
 ---
 
 apiVersion: apps/v1
