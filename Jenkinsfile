@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         //be sure to replace "willbla" with your own Docker Hub username
-        DOCKER_IMAGE_NAME = "gilardoni72/desplitrain-schedule"
+        DOCKER_IMAGE_NAME = "gilardoni72/despliegue"
     }
     stages {
         stage('Build') {
@@ -47,7 +47,7 @@ pipeline {
                 milestone(1)
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube.yml',
+                    configs: 'despliegue.yml',
                     enableConfigSubstitution: true
                 )
             }
