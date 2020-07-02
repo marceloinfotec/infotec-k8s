@@ -8,6 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
+                sh ' chmod +x gradelew
                 sh './gradelew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
